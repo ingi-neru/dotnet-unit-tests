@@ -1,0 +1,11 @@
+/home/kazimirov/Documents/university/semVI/verval/szemi/VerVal-szemi1/DatesAndStuff/src/DatesAndStuff/bin/Debug/net9.0/DatesAndStuff.deps.json
+/home/kazimirov/Documents/university/semVI/verval/szemi/VerVal-szemi1/DatesAndStuff/src/DatesAndStuff/bin/Debug/net9.0/DatesAndStuff.dll
+/home/kazimirov/Documents/university/semVI/verval/szemi/VerVal-szemi1/DatesAndStuff/src/DatesAndStuff/bin/Debug/net9.0/DatesAndStuff.pdb
+/home/kazimirov/Documents/university/semVI/verval/szemi/VerVal-szemi1/DatesAndStuff/src/DatesAndStuff/obj/Debug/net9.0/DatesAndStuff.GeneratedMSBuildEditorConfig.editorconfig
+/home/kazimirov/Documents/university/semVI/verval/szemi/VerVal-szemi1/DatesAndStuff/src/DatesAndStuff/obj/Debug/net9.0/DatesAndStuff.AssemblyInfoInputs.cache
+/home/kazimirov/Documents/university/semVI/verval/szemi/VerVal-szemi1/DatesAndStuff/src/DatesAndStuff/obj/Debug/net9.0/DatesAndStuff.AssemblyInfo.cs
+/home/kazimirov/Documents/university/semVI/verval/szemi/VerVal-szemi1/DatesAndStuff/src/DatesAndStuff/obj/Debug/net9.0/DatesAndStuff.csproj.CoreCompileInputs.cache
+/home/kazimirov/Documents/university/semVI/verval/szemi/VerVal-szemi1/DatesAndStuff/src/DatesAndStuff/obj/Debug/net9.0/DatesAndStuff.dll
+/home/kazimirov/Documents/university/semVI/verval/szemi/VerVal-szemi1/DatesAndStuff/src/DatesAndStuff/obj/Debug/net9.0/refint/DatesAndStuff.dll
+/home/kazimirov/Documents/university/semVI/verval/szemi/VerVal-szemi1/DatesAndStuff/src/DatesAndStuff/obj/Debug/net9.0/DatesAndStuff.pdb
+/home/kazimirov/Documents/university/semVI/verval/szemi/VerVal-szemi1/DatesAndStuff/src/DatesAndStuff/obj/Debug/net9.0/ref/DatesAndStuff.dll
