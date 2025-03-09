@@ -28,7 +28,7 @@ namespace DatesAndStuff
 
         public void GotMarried(string newName)
         {
-            if (married)
+           if (married)
                 throw new Exception("Poligamy not yet supported.");
 
             this.married = true;
