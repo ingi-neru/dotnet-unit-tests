@@ -117,7 +117,15 @@ namespace DatesAndStuff.Tests
             // simulation difference timespane and datetimetimespan is the same
             public void DifferentTimes_SubtractingTwoInstances_ShouldReturnCorrectTimeSpan()
             {
-                throw new NotImplementedException();
+              DateTime baseDate1 = new DateTime(2010, 8, 23, 9, 4, 49);
+              DateTime baseDate2 = new DateTime(2010, 8, 23, 9, 4, 50);
+              SimulationTime sut1 = new SimulationTime(baseDate1);
+              SimulationTime sut2 = new SimulationTime(baseDate2);
+
+              TimeSpan simulationTimeSpan = sut2 - sut1;
+              TimeSpan dateTimeTimeSpan = baseDate2 - baseDate1;
+
+              Assert.AreEqual(dateTimeTimeSpan, simulationTimeSpan);
             }
         }
 
@@ -146,21 +154,45 @@ namespace DatesAndStuff.Tests
             // creat a SimulationTime from a DateTime, add the same milliseconds to both and check if they are still equal
             public void SameMilliseconds_AddingMilliseconds_ShouldRemainEqual()
             {
-                throw new NotImplementedException();
+                DateTime baseDate = new DateTime(2010, 8, 23, 9, 4, 49);
+                SimulationTime sut1 = new SimulationTime(baseDate);
+                SimulationTime sut2 = new SimulationTime(baseDate);
+                var millisecondsToAdd = 1000;
+
+                sut1.AddMilliseconds(millisecondsToAdd);
+                sut2.AddMilliseconds(millisecondsToAdd);
+
+                Assert.AreEqual(sut1, sut2);
             }
 
             [Test]
             // the same as before just with seconds
             public void SameSeconds_AddingSeconds_ShouldRemainEqual()
             {
-                throw new NotImplementedException();
+                DateTime baseDate = new DateTime(2010, 8, 23, 9, 4, 49);
+                SimulationTime sut1 = new SimulationTime(baseDate);
+                SimulationTime sut2 = new SimulationTime(baseDate);
+                var secondsToAdd = 100;
+
+                sut1.AddMilliseconds(secondsToAdd);
+                sut2.AddMilliseconds(secondsToAdd);
+
+                Assert.AreEqual(sut1, sut2);
             }
 
             [Test]
             // same as before just with timespan
             public void SameTimeSpan_AddingTimeSpan_ShouldRemainEqual()
             {
-                throw new NotImplementedException();
+                DateTime baseDate = new DateTime(2010, 8, 23, 9, 4, 49);
+                SimulationTime sut1 = new SimulationTime(baseDate);
+                SimulationTime sut2 = new SimulationTime(baseDate);
+                var ts = TimeSpan.FromSeconds(100);
+
+                sut1 += ts;
+                sut2 += ts;
+
+                Assert.AreEqual(sut1, sut2);
             }
         }
 
