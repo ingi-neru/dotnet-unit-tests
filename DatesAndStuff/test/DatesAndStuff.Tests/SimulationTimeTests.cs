@@ -32,7 +32,7 @@ namespace DatesAndStuff.Tests
             return sut;
         }
 
-        private class ConstructorTests 
+        private class ConstructorTests
         {
             [Test]
             // Default time is not current time.
@@ -42,7 +42,7 @@ namespace DatesAndStuff.Tests
             }
         }
 
-        private class OperatorTests 
+        private class OperatorTests
         {
             [Test]
             // equal
@@ -61,7 +61,7 @@ namespace DatesAndStuff.Tests
             }
         }
 
-        private class TimeSpanArithmeticTests  
+        private class TimeSpanArithmeticTests
         {
             [Test]
             // TimeSpanArithmetic
@@ -84,7 +84,21 @@ namespace DatesAndStuff.Tests
 
                 // Assert
                 var expectedDateTime = baseDate + ts;
-                Assert.AreEqual(expectedDateTime, result.ToAbsoluteDateTime());
+                var resultDateTime = result.ToAbsoluteDateTime();
+                Assert.AreEqual(expectedDateTime.Ticks, resultDateTime.Ticks);
+                Assert.AreEqual(expectedDateTime.Nanosecond, resultDateTime.Nanosecond);
+                Assert.AreEqual(expectedDateTime.Millisecond, resultDateTime.Millisecond);
+                Assert.AreEqual(expectedDateTime.Microsecond, resultDateTime.Microsecond);
+                Assert.AreEqual(expectedDateTime.Second, resultDateTime.Second);
+                Assert.AreEqual(expectedDateTime.Minute, resultDateTime.Minute);
+                Assert.AreEqual(expectedDateTime.Hour, resultDateTime.Hour);
+                Assert.AreEqual(expectedDateTime.Day, resultDateTime.Day);
+                Assert.AreEqual(expectedDateTime.Month, resultDateTime.Month);
+                Assert.AreEqual(expectedDateTime.Year, resultDateTime.Year);
+                Assert.AreEqual(expectedDateTime.TimeOfDay, resultDateTime.TimeOfDay);
+                Assert.AreEqual(expectedDateTime.DayOfWeek, resultDateTime.DayOfWeek);
+                Assert.AreEqual(expectedDateTime.DayOfYear, resultDateTime.DayOfYear);
+                Assert.AreEqual(expectedDateTime.Kind, resultDateTime.Kind);
             }
 
             [Test]
@@ -97,7 +111,7 @@ namespace DatesAndStuff.Tests
             }
         }
 
-        private class TimeDifferenceTests 
+      private class TimeDifferenceTests
         {
             [Test]
             // simulation difference timespane and datetimetimespan is the same
@@ -107,7 +121,7 @@ namespace DatesAndStuff.Tests
             }
         }
 
-        private class MillisecondRepresentationTests 
+        private class MillisecondRepresentationTests
         {
             [Test]
             // millisecond representation works
@@ -122,11 +136,11 @@ namespace DatesAndStuff.Tests
             public void NextMillisec_Increment_ShouldReturnNextMillisecond()
             {
                 //Assert.AreEqual(t1.TotalMilliseconds + 1, t1.NextMillisec.TotalMilliseconds);
-                throw new NotImplementedException(); 
+                throw new NotImplementedException();
             }
         }
 
-        private class EqualityAndAdditionTests 
+        private class EqualityAndAdditionTests
         {
             [Test]
             // creat a SimulationTime from a DateTime, add the same milliseconds to both and check if they are still equal
@@ -150,7 +164,7 @@ namespace DatesAndStuff.Tests
             }
         }
 
-        private class StringRepresentationTests 
+        private class StringRepresentationTests
         {
             [Test]
             // check string representation given by ToString
