@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "PoVCfoFlqrc=",
+  "dgSpecHash": "QVk9bkTBAqo=",
   "success": true,
   "projectFilePath": "/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/DatesAndStuff.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/kazimirov/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.3/microsoft.aspnetcore.app.ref.9.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jk43KvgKHoc=",
+  "dgSpecHash": "NMh2rVNMNoE=",
   "success": true,
   "projectFilePath": "/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/DatesAndStuff.Tests.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,8 @@
     "/home/kazimirov/.nuget/packages/nunit/3.14.0/nunit.3.14.0.nupkg.sha512",
     "/home/kazimirov/.nuget/packages/nunit.analyzers/3.9.0/nunit.analyzers.3.9.0.nupkg.sha512",
     "/home/kazimirov/.nuget/packages/nunit3testadapter/4.5.0/nunit3testadapter.4.5.0.nupkg.sha512",
-    "/home/kazimirov/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512"
+    "/home/kazimirov/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512",
+    "/home/kazimirov/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.3/microsoft.aspnetcore.app.ref.9.0.3.nupkg.sha512"
   ],
   "logs": []
 }

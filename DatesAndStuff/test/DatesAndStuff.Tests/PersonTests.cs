@@ -62,7 +62,8 @@ public class PersonTests
 
         sut.IncreaseSalary(percentageIncrease);
 
-        Assert.That(sut.Salary, Is.EqualTo(expectedSalary).Within(0.000001));
+        //Assert.That(sut.Salary, Is.EqualTo(expectedSalary).Within(0.000001));
+        sut.Salary.Should().BeApproximately(expectedSalary, 0.000001);
 
     }
 

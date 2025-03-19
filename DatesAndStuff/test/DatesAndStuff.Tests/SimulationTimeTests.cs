@@ -1,5 +1,6 @@
 namespace DatesAndStuff.Tests
 {
+    using FluentAssertions;
     public sealed class SimulationTimeTests
     {
         [OneTimeSetUp]
@@ -125,7 +126,8 @@ namespace DatesAndStuff.Tests
               TimeSpan simulationTimeSpan = sut2 - sut1;
               TimeSpan dateTimeTimeSpan = baseDate2 - baseDate1;
 
-              Assert.AreEqual(dateTimeTimeSpan, simulationTimeSpan);
+              //Assert.AreEqual(dateTimeTimeSpan, simulationTimeSpan);
+              dateTimeTimeSpan.Should().Be(simulationTimeSpan);
             }
         }
 
@@ -162,7 +164,8 @@ namespace DatesAndStuff.Tests
                 sut1.AddMilliseconds(millisecondsToAdd);
                 sut2.AddMilliseconds(millisecondsToAdd);
 
-                Assert.AreEqual(sut1, sut2);
+                //Assert.AreEqual(sut1, sut2);
+                sut1.Should().Be(sut2);
             }
 
             [Test]
@@ -177,7 +180,8 @@ namespace DatesAndStuff.Tests
                 sut1.AddMilliseconds(secondsToAdd);
                 sut2.AddMilliseconds(secondsToAdd);
 
-                Assert.AreEqual(sut1, sut2);
+                //Assert.AreEqual(sut1, sut2);
+                sut1.Should().Be(sut2);
             }
 
             [Test]
@@ -192,7 +196,8 @@ namespace DatesAndStuff.Tests
                 sut1 += ts;
                 sut2 += ts;
 
-                Assert.AreEqual(sut1, sut2);
+                //Assert.AreEqual(sut1, sut2);
+                sut1.Should().Be(sut2);
             }
         }
 
