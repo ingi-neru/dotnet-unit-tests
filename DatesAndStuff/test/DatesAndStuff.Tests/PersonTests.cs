@@ -74,7 +74,8 @@ public class PersonTests
 
         sut.IncreaseSalary(0);
 
-        Assert.That(sut.Salary, Is.EqualTo(salaryBeforeIncrease));
+        //Assert.That(sut.Salary, Is.EqualTo(salaryBeforeIncrease));
+        sut.Salary.Should().Be(salaryBeforeIncrease);
     }
 
     [Test]
@@ -86,7 +87,8 @@ public class PersonTests
 
         sut.IncreaseSalary(percentageIncrease);
 
-        Assert.That(sut.Salary, Is.EqualTo(expectedSalary).Within(0.000001));
+        //Assert.That(sut.Salary, Is.EqualTo(expectedSalary).Within(0.000001));
+        sut.Salary.Should().BeApproximately(expectedSalary, 0.000001);
     }
 
     [Test]
@@ -94,7 +96,9 @@ public class PersonTests
     {
         double percentageIncrease = -10.1;
 
-        Assert.That(() => sut.IncreaseSalary(percentageIncrease), Throws.Exception.TypeOf<ArgumentOutOfRangeException>());    
+        //Assert.That(() => sut.IncreaseSalary(percentageIncrease), Throws.Exception.TypeOf<ArgumentOutOfRangeException>());    
+        Action act = () => sut.IncreaseSalary(percentageIncrease);
+        act.Should().Throw<ArgumentOutOfRangeException>();
     
     }
   }
