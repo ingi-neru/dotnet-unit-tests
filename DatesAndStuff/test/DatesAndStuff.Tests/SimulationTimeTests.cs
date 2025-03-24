@@ -17,7 +17,6 @@ namespace DatesAndStuff.Tests
         [TearDown]
         public void TearDown()
         {
-            // minden teszt utan lefut
         }
 
         [OneTimeTearDown]
