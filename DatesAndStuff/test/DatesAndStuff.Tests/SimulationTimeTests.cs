@@ -1,6 +1,5 @@
 namespace DatesAndStuff.Tests
 {
-    using FluentAssertions;
     public sealed class SimulationTimeTests
     {
         [OneTimeSetUp]
@@ -18,7 +17,6 @@ namespace DatesAndStuff.Tests
         [TearDown]
         public void TearDown()
         {
-            // minden teszt utan lefut
         }
 
         [OneTimeTearDown]
@@ -26,50 +24,38 @@ namespace DatesAndStuff.Tests
         {
         }
 
-        private SimulationTime sut;
-
-        private SimulationTime GetSut()
+        [Test]
+        // Default time is not current time.
+        public void SimulationTime_Construction()
         {
-            return sut;
+            throw new NotImplementedException();
         }
 
-        private class ConstructorTests
+        [Test]
+        // equal
+        // not equal
+        // <
+        // >
+        // <= different
+        // >= different 
+        // <= same
+        // >= same
+        // max
+        // min
+        public void SimulationTime_Op()
         {
-            [Test]
-            // Default time is not current time.
-            public void NoArguments_Constructor_ShouldNotCurrentTime()
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        private class OperatorTests
-        {
-            [Test]
-            // equal
-            // not equal
-            // <
-            // >
-            // <= different
-            // >= different 
-            // <= same
-            // >= same
-            // max
-            // min
-            public void DifferentValues_Operators_ShouldBehaveCorrectly()
-            {
-                throw new NotImplementedException();
-            }
+            throw new NotImplementedException();
         }
 
         private class TimeSpanArithmeticTests
         {
+
             [Test]
             // TimeSpanArithmetic
             // add
             // substract
             // Given_When_Then
-            public void TimeSpan_Addition_ShouldShiftTime()
+            public void Addition_SimulationTimeIsShifted()
             {
                 // UserSignedIn_OrderSent_OrderIsRegistered
                 // DBB, specflow, cucumber, gherkin
@@ -85,26 +71,12 @@ namespace DatesAndStuff.Tests
 
                 // Assert
                 var expectedDateTime = baseDate + ts;
-                var resultDateTime = result.ToAbsoluteDateTime();
-                Assert.AreEqual(expectedDateTime.Ticks, resultDateTime.Ticks);
-                Assert.AreEqual(expectedDateTime.Nanosecond, resultDateTime.Nanosecond);
-                Assert.AreEqual(expectedDateTime.Millisecond, resultDateTime.Millisecond);
-                Assert.AreEqual(expectedDateTime.Microsecond, resultDateTime.Microsecond);
-                Assert.AreEqual(expectedDateTime.Second, resultDateTime.Second);
-                Assert.AreEqual(expectedDateTime.Minute, resultDateTime.Minute);
-                Assert.AreEqual(expectedDateTime.Hour, resultDateTime.Hour);
-                Assert.AreEqual(expectedDateTime.Day, resultDateTime.Day);
-                Assert.AreEqual(expectedDateTime.Month, resultDateTime.Month);
-                Assert.AreEqual(expectedDateTime.Year, resultDateTime.Year);
-                Assert.AreEqual(expectedDateTime.TimeOfDay, resultDateTime.TimeOfDay);
-                Assert.AreEqual(expectedDateTime.DayOfWeek, resultDateTime.DayOfWeek);
-                Assert.AreEqual(expectedDateTime.DayOfYear, resultDateTime.DayOfYear);
-                Assert.AreEqual(expectedDateTime.Kind, resultDateTime.Kind);
+                Assert.AreEqual(expectedDateTime, result.ToAbsoluteDateTime());
             }
 
             [Test]
             //Method_Should_Then
-            public void Subtraction_SimulationTime_Shifted()
+            public void Subtracttion_SimulationTimeShifted()
             {
                 // code kozelibb
                 // RegisterOrder_SignedInUserSendsOrder_OrderIsRegistered
@@ -112,103 +84,56 @@ namespace DatesAndStuff.Tests
             }
         }
 
-      private class TimeDifferenceTests
+
+        [Test]
+        // simulation difference timespane and datetimetimespan is the same
+        public void SimulationTime_SubtractSimulationTime()
         {
-            [Test]
-            // simulation difference timespane and datetimetimespan is the same
-            public void DifferentTimes_SubtractingTwoInstances_ShouldReturnCorrectTimeSpan()
-            {
-              DateTime baseDate1 = new DateTime(2010, 8, 23, 9, 4, 49);
-              DateTime baseDate2 = new DateTime(2010, 8, 23, 9, 4, 50);
-              SimulationTime sut1 = new SimulationTime(baseDate1);
-              SimulationTime sut2 = new SimulationTime(baseDate2);
-
-              TimeSpan simulationTimeSpan = sut2 - sut1;
-              TimeSpan dateTimeTimeSpan = baseDate2 - baseDate1;
-
-              //Assert.AreEqual(dateTimeTimeSpan, simulationTimeSpan);
-              dateTimeTimeSpan.Should().Be(simulationTimeSpan);
-            }
+            throw new NotImplementedException();
         }
 
-        private class MillisecondRepresentationTests
+        [Test]
+        // millisecond representation works
+        public void SimulationTime_1msPerTick()
         {
-            [Test]
-            // millisecond representation works
-            public void OneMillisecondPerTick_MillisecondRepresentation_ShouldBehaveCorrectly()
-            {
-                //var t1 = SimulationTime.MinValue.AddMilliseconds(10);
-                throw new NotImplementedException();
-            }
-
-            [Test]
-            // next millisec calculation works /MST
-            public void NextMillisec_Increment_ShouldReturnNextMillisecond()
-            {
-                //Assert.AreEqual(t1.TotalMilliseconds + 1, t1.NextMillisec.TotalMilliseconds);
-                throw new NotImplementedException();
-            }
+            //var t1 = SimulationTime.MinValue.AddMilliseconds(10);
+            throw new NotImplementedException();
         }
 
-        private class EqualityAndAdditionTests
+        [Test]
+        // next millisec calculation works
+        public void SimulationTime_NextMillisec()
         {
-            [Test]
-            // creat a SimulationTime from a DateTime, add the same milliseconds to both and check if they are still equal
-            public void SameMilliseconds_AddingMilliseconds_ShouldRemainEqual()
-            {
-                DateTime baseDate = new DateTime(2010, 8, 23, 9, 4, 49);
-                SimulationTime sut1 = new SimulationTime(baseDate);
-                SimulationTime sut2 = new SimulationTime(baseDate);
-                var millisecondsToAdd = 1000;
-
-                sut1.AddMilliseconds(millisecondsToAdd);
-                sut2.AddMilliseconds(millisecondsToAdd);
-
-                //Assert.AreEqual(sut1, sut2);
-                sut1.Should().Be(sut2);
-            }
-
-            [Test]
-            // the same as before just with seconds
-            public void SameSeconds_AddingSeconds_ShouldRemainEqual()
-            {
-                DateTime baseDate = new DateTime(2010, 8, 23, 9, 4, 49);
-                SimulationTime sut1 = new SimulationTime(baseDate);
-                SimulationTime sut2 = new SimulationTime(baseDate);
-                var secondsToAdd = 100;
-
-                sut1.AddMilliseconds(secondsToAdd);
-                sut2.AddMilliseconds(secondsToAdd);
-
-                //Assert.AreEqual(sut1, sut2);
-                sut1.Should().Be(sut2);
-            }
-
-            [Test]
-            // same as before just with timespan
-            public void SameTimeSpan_AddingTimeSpan_ShouldRemainEqual()
-            {
-                DateTime baseDate = new DateTime(2010, 8, 23, 9, 4, 49);
-                SimulationTime sut1 = new SimulationTime(baseDate);
-                SimulationTime sut2 = new SimulationTime(baseDate);
-                var ts = TimeSpan.FromSeconds(100);
-
-                sut1 += ts;
-                sut2 += ts;
-
-                //Assert.AreEqual(sut1, sut2);
-                sut1.Should().Be(sut2);
-            }
+            //Assert.AreEqual(t1.TotalMilliseconds + 1, t1.NextMillisec.TotalMilliseconds);
+            throw new NotImplementedException();
         }
 
-        private class StringRepresentationTests
+        [Test]
+        // creat a SimulationTime from a DateTime, add the same milliseconds to both and check if they are still equal
+        public void SimulationTime_AddMilliSeconds()
         {
-            [Test]
-            // check string representation given by ToString
-            public void Instance_ToString_ShouldReturnCorrectStringRepresentation()
-            {
-                throw new NotImplementedException();
-            }
+            throw new NotImplementedException();
+        }
+
+        [Test]
+        // the same as before just with seconds
+        public void SimulationTime_AddSeconds()
+        {
+            throw new NotImplementedException();
+        }
+
+        [Test]
+        // same as before just with timespan
+        public void SimulationTime_AddTimeSpan()
+        {
+            throw new NotImplementedException();
+        }
+
+        [Test]
+        // check string representation given by ToString
+        public void SimulationTime_ToString()
+        {
+            throw new NotImplementedException();
         }
     }
 }
