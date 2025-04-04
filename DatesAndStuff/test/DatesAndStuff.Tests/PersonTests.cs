@@ -6,9 +6,13 @@ namespace DatesAndStuff.Tests;
 
 public class PersonTests
 {
+    private Person sut;
     [SetUp]
     public void Setup()
-    {
+    { 
+
+      sut = PersonFactory.CreateTestPerson() ;
+
     }
 
 
@@ -49,26 +53,27 @@ public class PersonTests
 
           // Assert
           Assert.IsTrue(task.IsFaulted);
-    }
+      }
 
-    [Test]
-    public void GotMerried_Second_ShouldFail()
-    {
-        // Arrange
-        var fixture = new AutoFixture.Fixture();
-        fixture.Customize<IPaymentService>(c => c.FromFactory(() => new TestPaymentService()));
+      [Test]
+      public void GotMerried_Second_ShouldFail()
+      {
+          // Arrange
+          var fixture = new AutoFixture.Fixture();
+          fixture.Customize<IPaymentService>(c => c.FromFactory(() => new TestPaymentService()));
 
-        var sut = fixture.Create<Person>();
+          var sut = fixture.Create<Person>();
 
-        string newName = "Test-Eleso-Felallo Pista";
-        sut.GotMarried("");
+          string newName = "Test-Eleso-Felallo Pista";
+          sut.GotMarried("");
 
-        // Act
-        var task = Task.Run(() => sut.GotMarried(""));
-        try { task.Wait(); } catch { }
+          // Act
+          var task = Task.Run(() => sut.GotMarried(""));
+          try { task.Wait(); } catch { }
 
-        // Assert
-        Assert.IsTrue(task.IsFaulted);
+          // Assert
+          Assert.IsTrue(task.IsFaulted);
+      }
     }
 
     [Test]
@@ -141,6 +146,5 @@ public class PersonTests
         //Assert.That(() => sut.IncreaseSalary(percentageIncrease), Throws.Exception.TypeOf<ArgumentOutOfRangeException>());    
         Action act = () => sut.IncreaseSalary(percentageIncrease);
         act.Should().Throw<ArgumentOutOfRangeException>();
-    
     }
 }

@@ -112,7 +112,7 @@ namespace DatesAndStuff.Tests
         }
 
       private class TimeDifferenceTests
-        {
+      {
             [Test]
             // simulation difference timespane and datetimetimespan is the same
             public void DifferentTimes_SubtractingTwoInstances_ShouldReturnCorrectTimeSpan()
@@ -130,84 +130,84 @@ namespace DatesAndStuff.Tests
             }
         }
 
-        private class MillisecondRepresentationTests
-        {
-            [Test]
-            // millisecond representation works
-            public void OneMillisecondPerTick_MillisecondRepresentation_ShouldBehaveCorrectly()
-            {
-                //var t1 = SimulationTime.MinValue.AddMilliseconds(10);
-                throw new NotImplementedException();
-            }
+      private class MillisecondRepresentationTests
+      {
+          [Test]
+          // millisecond representation works
+          public void OneMillisecondPerTick_MillisecondRepresentation_ShouldBehaveCorrectly()
+          {
+              //var t1 = SimulationTime.MinValue.AddMilliseconds(10);
+              throw new NotImplementedException();
+          }
 
-            [Test]
-            // next millisec calculation works /MST
-            public void NextMillisec_Increment_ShouldReturnNextMillisecond()
-            {
-                //Assert.AreEqual(t1.TotalMilliseconds + 1, t1.NextMillisec.TotalMilliseconds);
-                throw new NotImplementedException();
-            }
-        }
+          [Test]
+          // next millisec calculation works /MST
+          public void NextMillisec_Increment_ShouldReturnNextMillisecond()
+          {
+              //Assert.AreEqual(t1.TotalMilliseconds + 1, t1.NextMillisec.TotalMilliseconds);
+              throw new NotImplementedException();
+          }
+      }
 
-        private class EqualityAndAdditionTests
-        {
-            [Test]
-            // creat a SimulationTime from a DateTime, add the same milliseconds to both and check if they are still equal
-            public void SameMilliseconds_AddingMilliseconds_ShouldRemainEqual()
-            {
-                DateTime baseDate = new DateTime(2010, 8, 23, 9, 4, 49);
-                SimulationTime sut1 = new SimulationTime(baseDate);
-                SimulationTime sut2 = new SimulationTime(baseDate);
-                var millisecondsToAdd = 1000;
+      private class EqualityAndAdditionTests
+      {
+          [Test]
+          // creat a SimulationTime from a DateTime, add the same milliseconds to both and check if they are still equal
+          public void SameMilliseconds_AddingMilliseconds_ShouldRemainEqual()
+          {
+              DateTime baseDate = new DateTime(2010, 8, 23, 9, 4, 49);
+              SimulationTime sut1 = new SimulationTime(baseDate);
+              SimulationTime sut2 = new SimulationTime(baseDate);
+              var millisecondsToAdd = 1000;
 
-                sut1.AddMilliseconds(millisecondsToAdd);
-                sut2.AddMilliseconds(millisecondsToAdd);
+              sut1.AddMilliseconds(millisecondsToAdd);
+              sut2.AddMilliseconds(millisecondsToAdd);
 
-                //Assert.AreEqual(sut1, sut2);
-                sut1.Should().Be(sut2);
-            }
+              //Assert.AreEqual(sut1, sut2);
+              sut1.Should().Be(sut2);
+          }
 
-            [Test]
-            // the same as before just with seconds
-            public void SameSeconds_AddingSeconds_ShouldRemainEqual()
-            {
-                DateTime baseDate = new DateTime(2010, 8, 23, 9, 4, 49);
-                SimulationTime sut1 = new SimulationTime(baseDate);
-                SimulationTime sut2 = new SimulationTime(baseDate);
-                var secondsToAdd = 100;
+          [Test]
+          // the same as before just with seconds
+          public void SameSeconds_AddingSeconds_ShouldRemainEqual()
+          {
+              DateTime baseDate = new DateTime(2010, 8, 23, 9, 4, 49);
+              SimulationTime sut1 = new SimulationTime(baseDate);
+              SimulationTime sut2 = new SimulationTime(baseDate);
+              var secondsToAdd = 100;
 
-                sut1.AddMilliseconds(secondsToAdd);
-                sut2.AddMilliseconds(secondsToAdd);
+              sut1.AddMilliseconds(secondsToAdd);
+              sut2.AddMilliseconds(secondsToAdd);
 
-                //Assert.AreEqual(sut1, sut2);
-                sut1.Should().Be(sut2);
-            }
+              //Assert.AreEqual(sut1, sut2);
+              sut1.Should().Be(sut2);
+          }
 
-            [Test]
-            // same as before just with timespan
-            public void SameTimeSpan_AddingTimeSpan_ShouldRemainEqual()
-            {
-                DateTime baseDate = new DateTime(2010, 8, 23, 9, 4, 49);
-                SimulationTime sut1 = new SimulationTime(baseDate);
-                SimulationTime sut2 = new SimulationTime(baseDate);
-                var ts = TimeSpan.FromSeconds(100);
+          [Test]
+          // same as before just with timespan
+          public void SameTimeSpan_AddingTimeSpan_ShouldRemainEqual()
+          {
+              DateTime baseDate = new DateTime(2010, 8, 23, 9, 4, 49);
+              SimulationTime sut1 = new SimulationTime(baseDate);
+              SimulationTime sut2 = new SimulationTime(baseDate);
+              var ts = TimeSpan.FromSeconds(100);
 
-                sut1 += ts;
-                sut2 += ts;
+              sut1 += ts;
+              sut2 += ts;
 
-                //Assert.AreEqual(sut1, sut2);
-                sut1.Should().Be(sut2);
-            }
-        }
+              //Assert.AreEqual(sut1, sut2);
+              sut1.Should().Be(sut2);
+          }
+      }
 
-        private class StringRepresentationTests
-        {
-            [Test]
-            // check string representation given by ToString
-            public void Instance_ToString_ShouldReturnCorrectStringRepresentation()
-            {
-                throw new NotImplementedException();
-            }
-        }
+      private class StringRepresentationTests
+      {
+          [Test]
+          // check string representation given by ToString
+          public void Instance_ToString_ShouldReturnCorrectStringRepresentation()
+          {
+              throw new NotImplementedException();
+          }
+      }
     }
 }

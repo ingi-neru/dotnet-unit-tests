@@ -1,0 +1,12 @@
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/bin/Debug/net8.0/DatesAndStuff.deps.json
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/bin/Debug/net8.0/DatesAndStuff.dll
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/bin/Debug/net8.0/DatesAndStuff.pdb
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/Debug/net8.0/DatesAndStuff.GeneratedMSBuildEditorConfig.editorconfig
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/Debug/net8.0/DatesAndStuff.AssemblyInfoInputs.cache
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/Debug/net8.0/DatesAndStuff.AssemblyInfo.cs
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/Debug/net8.0/DatesAndStuff.csproj.CoreCompileInputs.cache
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/Debug/net8.0/DatesAndStuff.sourcelink.json
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/Debug/net8.0/DatesAndStuff.dll
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/Debug/net8.0/refint/DatesAndStuff.dll
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/Debug/net8.0/DatesAndStuff.pdb
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/Debug/net8.0/ref/DatesAndStuff.dll

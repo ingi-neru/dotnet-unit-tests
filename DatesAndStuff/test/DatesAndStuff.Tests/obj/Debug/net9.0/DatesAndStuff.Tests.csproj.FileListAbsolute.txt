@@ -203,3 +203,12 @@
 /home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/obj/Debug/net9.0/DatesAndStuff.Tests.pdb
 /home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/obj/Debug/net9.0/DatesAndStuff.Tests.genruntimeconfig.cache
 /home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/obj/Debug/net9.0/ref/DatesAndStuff.Tests.dll
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/bin/Debug/net9.0/AutoFixture.dll
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/bin/Debug/net9.0/AutoFixture.AutoMoq.dll
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/bin/Debug/net9.0/AutoFixture.NUnit3.dll
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/bin/Debug/net9.0/Castle.Core.dll
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/bin/Debug/net9.0/Fare.dll
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/bin/Debug/net9.0/Moq.dll
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/bin/Debug/net9.0/System.Diagnostics.EventLog.dll
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll
+/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll
