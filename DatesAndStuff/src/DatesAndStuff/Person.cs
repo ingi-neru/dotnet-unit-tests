@@ -35,7 +35,9 @@ namespace DatesAndStuff
 
         public const double SubscriptionFee = 500;
 
-        public Person(string name, EmploymentInformation employment, IPaymentService paymentService, LocalTaxData taxData, FoodPreferenceParams foodPreferenceParams)
+        public double Balance = 1000;
+
+        public Person(string name, EmploymentInformation employment, IPaymentService paymentService, LocalTaxData taxData, FoodPreferenceParams foodPreferenceParams, double balance)
         {
             this.Name = name;
             this.married = false;
@@ -46,7 +48,7 @@ namespace DatesAndStuff
             this.CanEatLactose = foodPreferenceParams.CanEatLactose;
             this.CanEatEgg = foodPreferenceParams.CanEatEgg;
             this.CanEatChocolate = foodPreferenceParams.CanEatChocolate;
-
+            this.Balance = balance;
         }
 
         public void GotMarried(string newName)
@@ -75,7 +77,8 @@ namespace DatesAndStuff
                     CanEatEgg = p.CanEatEgg,
                     CanEatChocolate = p.CanEatChocolate,
                     CanEatLactose = p.CanEatLactose
-                }
+                },
+                p.Balance
                );
         }
 
@@ -83,8 +86,17 @@ namespace DatesAndStuff
         {
             PreferredPayment.StartPayment();
             PreferredPayment.SpecifyAmount(SubscriptionFee);
-            PreferredPayment.ConfirmPayment();
-            return true;
+            double balance = PreferredPayment.GetBalance(this);
+            Console.WriteLine($"PerformSubscriptionPayment called with {this.Name} and balance {balance}");
+            if (balance < SubscriptionFee)
+            {
+                PreferredPayment.CancelPayment();
+                return false;
+            }
+            else {
+                PreferredPayment.ConfirmPayment();
+                return true; 
+            }
         }
     }
 }

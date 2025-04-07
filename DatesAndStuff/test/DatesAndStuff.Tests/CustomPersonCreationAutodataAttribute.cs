@@ -18,6 +18,7 @@ namespace DatesAndStuff.Tests
             var paymentService = new Mock<IPaymentService>();
             paymentService.InSequence(paymentSequence).Setup(m => m.StartPayment());
             paymentService.InSequence(paymentSequence).Setup(m => m.SpecifyAmount(Person.SubscriptionFee));
+            paymentService.InSequence(paymentSequence).Setup(m => m.GetBalance(It.IsAny<Person>())).Returns(1000.0);
             paymentService.InSequence(paymentSequence).Setup(m => m.ConfirmPayment());
             fixture.Inject(paymentService);
 

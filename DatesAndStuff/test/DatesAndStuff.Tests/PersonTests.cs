@@ -80,7 +80,6 @@ public class PersonTests
     {
         // Arrange
         double initialSalary = sut.Salary;
-        Console.WriteLine($"Initial salary: {initialSalary}, increase: {salaryIncreasePercentage}");
         // Act
 
         // Assert

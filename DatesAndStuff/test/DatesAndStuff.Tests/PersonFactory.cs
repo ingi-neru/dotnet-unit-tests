@@ -31,7 +31,8 @@ namespace DatesAndStuff.Tests
                  new Employer("RO1234567", "Valami city valami hely", "Dagobert bacsi", new List<int>() { 6201, 7210 })),
              new TestPaymentService(),
              new LocalTaxData("4367558"),
-             fp
+             fp,
+             1000.0
             );
         }
     }
