@@ -21,3 +21,15 @@
 /home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/Debug/net9.0/refint/DatesAndStuff.dll
 /home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/Debug/net9.0/DatesAndStuff.pdb
 /home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/Debug/net9.0/ref/DatesAndStuff.dll
+C:\Users\TP-E14\Documents\University\verval\dotnet-unit-tests\DatesAndStuff\src\DatesAndStuff\bin\Debug\net9.0\DatesAndStuff.deps.json
+C:\Users\TP-E14\Documents\University\verval\dotnet-unit-tests\DatesAndStuff\src\DatesAndStuff\bin\Debug\net9.0\DatesAndStuff.dll
+C:\Users\TP-E14\Documents\University\verval\dotnet-unit-tests\DatesAndStuff\src\DatesAndStuff\bin\Debug\net9.0\DatesAndStuff.pdb
+C:\Users\TP-E14\Documents\University\verval\dotnet-unit-tests\DatesAndStuff\src\DatesAndStuff\obj\Debug\net9.0\DatesAndStuff.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TP-E14\Documents\University\verval\dotnet-unit-tests\DatesAndStuff\src\DatesAndStuff\obj\Debug\net9.0\DatesAndStuff.AssemblyInfoInputs.cache
+C:\Users\TP-E14\Documents\University\verval\dotnet-unit-tests\DatesAndStuff\src\DatesAndStuff\obj\Debug\net9.0\DatesAndStuff.AssemblyInfo.cs
+C:\Users\TP-E14\Documents\University\verval\dotnet-unit-tests\DatesAndStuff\src\DatesAndStuff\obj\Debug\net9.0\DatesAndStuff.csproj.CoreCompileInputs.cache
+C:\Users\TP-E14\Documents\University\verval\dotnet-unit-tests\DatesAndStuff\src\DatesAndStuff\obj\Debug\net9.0\DatesAndStuff.sourcelink.json
+C:\Users\TP-E14\Documents\University\verval\dotnet-unit-tests\DatesAndStuff\src\DatesAndStuff\obj\Debug\net9.0\DatesAndStuff.dll
+C:\Users\TP-E14\Documents\University\verval\dotnet-unit-tests\DatesAndStuff\src\DatesAndStuff\obj\Debug\net9.0\refint\DatesAndStuff.dll
+C:\Users\TP-E14\Documents\University\verval\dotnet-unit-tests\DatesAndStuff\src\DatesAndStuff\obj\Debug\net9.0\DatesAndStuff.pdb
+C:\Users\TP-E14\Documents\University\verval\dotnet-unit-tests\DatesAndStuff\src\DatesAndStuff\obj\Debug\net9.0\ref\DatesAndStuff.dll

@@ -2791,32 +2791,39 @@
     ]
   },
   "packageFolders": {
-    "/home/kazimirov/.nuget/packages/": {}
+    "C:\\Users\\TP-E14\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/DatesAndStuff.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\TP-E14\\Documents\\University\\verval\\dotnet-unit-tests\\DatesAndStuff\\test\\DatesAndStuff.Tests\\DatesAndStuff.Tests.csproj",
       "projectName": "DatesAndStuff.Tests",
-      "projectPath": "/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/DatesAndStuff.Tests.csproj",
-      "packagesPath": "/home/kazimirov/.nuget/packages/",
-      "outputPath": "/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/test/DatesAndStuff.Tests/obj/",
+      "projectPath": "C:\\Users\\TP-E14\\Documents\\University\\verval\\dotnet-unit-tests\\DatesAndStuff\\test\\DatesAndStuff.Tests\\DatesAndStuff.Tests.csproj",
+      "packagesPath": "C:\\Users\\TP-E14\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TP-E14\\Documents\\University\\verval\\dotnet-unit-tests\\DatesAndStuff\\test\\DatesAndStuff.Tests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/kazimirov/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\TP-E14\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/DatesAndStuff.csproj": {
-              "projectPath": "/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/DatesAndStuff.csproj"
+            "C:\\Users\\TP-E14\\Documents\\University\\verval\\dotnet-unit-tests\\DatesAndStuff\\src\\DatesAndStuff\\DatesAndStuff.csproj": {
+              "projectPath": "C:\\Users\\TP-E14\\Documents\\University\\verval\\dotnet-unit-tests\\DatesAndStuff\\src\\DatesAndStuff\\DatesAndStuff.csproj"
             }
           }
         }
@@ -2831,7 +2838,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net9.0": {
@@ -2890,7 +2897,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.104/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

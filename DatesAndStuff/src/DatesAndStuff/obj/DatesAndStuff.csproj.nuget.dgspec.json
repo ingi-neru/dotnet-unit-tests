@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/DatesAndStuff.csproj": {}
+    "C:\\Users\\TP-E14\\Documents\\University\\verval\\dotnet-unit-tests\\DatesAndStuff\\src\\DatesAndStuff\\DatesAndStuff.csproj": {}
   },
   "projects": {
-    "/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/DatesAndStuff.csproj": {
+    "C:\\Users\\TP-E14\\Documents\\University\\verval\\dotnet-unit-tests\\DatesAndStuff\\src\\DatesAndStuff\\DatesAndStuff.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/DatesAndStuff.csproj",
+        "projectUniqueName": "C:\\Users\\TP-E14\\Documents\\University\\verval\\dotnet-unit-tests\\DatesAndStuff\\src\\DatesAndStuff\\DatesAndStuff.csproj",
         "projectName": "DatesAndStuff",
-        "projectPath": "/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/DatesAndStuff.csproj",
-        "packagesPath": "/home/kazimirov/.nuget/packages/",
-        "outputPath": "/home/kazimirov/Documents/university/semVI/verval/labor/DatesAndStuff/src/DatesAndStuff/obj/",
+        "projectPath": "C:\\Users\\TP-E14\\Documents\\University\\verval\\dotnet-unit-tests\\DatesAndStuff\\src\\DatesAndStuff\\DatesAndStuff.csproj",
+        "packagesPath": "C:\\Users\\TP-E14\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TP-E14\\Documents\\University\\verval\\dotnet-unit-tests\\DatesAndStuff\\src\\DatesAndStuff\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/kazimirov/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\TP-E14\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -59,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.104/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
