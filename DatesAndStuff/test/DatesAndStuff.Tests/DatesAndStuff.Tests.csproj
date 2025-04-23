@@ -31,6 +31,8 @@
 	<PropertyGroup>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 	</PropertyGroup>
-
-
+<ItemGroup>
+	<CompilerVisibleProperty Include="RootNamespace" />
+	<CompilerVisibleProperty Include="ProjectDir" />
+</ItemGroup>
 </Project>
