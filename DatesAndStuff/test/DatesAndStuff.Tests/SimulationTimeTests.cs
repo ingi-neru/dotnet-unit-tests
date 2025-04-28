@@ -1,8 +1,10 @@
 namespace DatesAndStuff.Tests
 {
+    using AutoFixture;
     using FluentAssertions;
     public sealed class SimulationTimeTests
     {
+        public Fixture _fixture;
         [OneTimeSetUp]
         public void OneTimeSetupStuff()
         {
@@ -12,6 +14,7 @@ namespace DatesAndStuff.Tests
         [SetUp]
         public void Setup()
         {
+            _fixture = new Fixture();
             // minden teszt felteheti, hogz elotte lefutott ez
         }
 
@@ -30,6 +33,98 @@ namespace DatesAndStuff.Tests
         private SimulationTime GetSut()
         {
             return sut;
+        }
+
+        private class CoverageTests
+        {
+            [Test]
+            public void Equals_SameTotalMilliseconds_ShouldReturnTrue()
+            {
+                // Arrange
+                var value = new DateTime(2020 , 1 , 1 , 0 , 0 , 0);
+                var simTime1 = new SimulationTime(value);
+                var simTime2 = new SimulationTime(value);
+
+                // Act
+                var result = simTime1. Equals(simTime2);
+
+                // Assert
+                result. Should(). BeTrue();
+            }
+
+            [Test]
+            public void Equals_DifferentTotalMilliseconds_ShouldReturnFalse()
+            {
+                // Arrange
+                var simTime1 = new SimulationTime(new DateTime(2020 , 1 , 1 , 0 , 0 , 0));
+                var simTime2 = new SimulationTime(new DateTime(2020 , 1 , 1 , 0 , 0 , 1)); // +1 second
+
+                // Act
+                var result = simTime1. Equals(simTime2);
+
+                // Assert
+                result. Should(). BeFalse();
+            }
+
+
+            [Test]
+            public void CompareTo_SameTotalMilliseconds_ShouldReturnZero()
+            {
+                // Arrange
+                var value = new DateTime(2022 , 5 , 1 , 12 , 0 , 0);
+                var simTime1 = new SimulationTime(value);
+                var simTime2 = new SimulationTime(value);
+
+                // Act
+                var result = simTime1. CompareTo(simTime2);
+
+                // Assert
+                result. Should(). Be(0);
+            }
+
+            [Test]
+            public void CompareTo_LessTotalMilliseconds_ShouldReturnNegative()
+            {
+                // Arrange
+                var simTime1 = new SimulationTime(new DateTime(2022 , 5 , 1 , 12 , 0 , 0));
+                var simTime2 = new SimulationTime(new DateTime(2022 , 5 , 1 , 12 , 0 , 1)); // +1 sec
+
+                // Act
+                var result = simTime1. CompareTo(simTime2);
+
+                // Assert
+                result. Should(). BeNegative();
+            }
+
+            [Test]
+            public void CompareTo_GreaterTotalMilliseconds_ShouldReturnPositive()
+            {
+                // Arrange
+                var simTime1 = new SimulationTime(new DateTime(2022 , 5 , 1 , 12 , 0 , 1)); // +1 sec
+                var simTime2 = new SimulationTime(new DateTime(2022 , 5 , 1 , 12 , 0 , 0));
+
+                // Act
+                var result = simTime1. CompareTo(simTime2);
+
+                // Assert
+                result. Should(). BePositive();
+            }
+
+
+            [Test]
+            public void ToAbsoluteDateTime_ShouldReturnCorrectDateTime()
+            {
+                // Arrange
+                var dateTime = new DateTime(2020 , 1 , 1 , 12 , 0 , 0);
+                var simTime = new SimulationTime(dateTime);
+
+                // Act
+                var result = simTime. ToAbsoluteDateTime();
+
+                // Assert
+                result. Should(). Be(dateTime);
+            }
+
         }
 
         private class ConstructorTests
@@ -148,6 +243,7 @@ namespace DatesAndStuff.Tests
               //Assert.AreEqual(dateTimeTimeSpan, simulationTimeSpan);
               dateTimeTimeSpan.Should().Be(simulationTimeSpan);
             }
+
         }
 
       private class MillisecondRepresentationTests
