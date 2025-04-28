@@ -43,15 +43,13 @@ public class PersonTests
       {
           // Arrange
           string newName = "Test-Eleso-Felallo Pista";
-          sut.GotMarried("");
 
           // Act
-          var task = Task.Run(() => sut.GotMarried(""));
-          try { task.Wait(); } catch { }
+          Action act = () => sut.GotMarried(newName);
 
           // Assert
-          Assert.IsTrue(task.IsFaulted);
-      }
+          act.Should().Throw<System.Exception>().WithMessage("Poligamy not yet supported.");
+        }
 
       [Test]
       public void GotMerried_Second_ShouldFail()

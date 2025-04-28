@@ -38,7 +38,10 @@ namespace DatesAndStuff.Tests
             // Default time is not current time.
             public void NoArguments_Constructor_ShouldNotCurrentTime()
             {
-                throw new NotImplementedException();
+                var now = DateTime. UtcNow;
+                var simTime = new SimulationTime();
+
+                (simTime. ToAbsoluteDateTime() - now). Duration(). Should(). BeGreaterThan(TimeSpan. FromMilliseconds(10));
             }
         }
 
@@ -57,7 +60,19 @@ namespace DatesAndStuff.Tests
             // min
             public void DifferentValues_Operators_ShouldBehaveCorrectly()
             {
-                throw new NotImplementedException();
+                var time1 = new SimulationTime(new DateTime(2020 , 1 , 1));
+                var time2 = new SimulationTime(new DateTime(2021 , 1 , 1));
+
+                (time1 == time2). Should(). BeFalse();
+                (time1 != time2). Should(). BeTrue();
+                (time1 < time2). Should(). BeTrue();
+                (time2 > time1). Should(). BeTrue();
+                (time1 <= time2). Should(). BeTrue();
+                (time2 >= time1). Should(). BeTrue();
+                (time1 <= time1). Should(). BeTrue();
+                (time1 >= time1). Should(). BeTrue();
+                SimulationTime. Max(time1 , time2). Should(). Be(time2);
+                SimulationTime. Min(time1 , time2). Should(). Be(time1);
             }
         }
 
@@ -107,7 +122,12 @@ namespace DatesAndStuff.Tests
             {
                 // code kozelibb
                 // RegisterOrder_SignedInUserSendsOrder_OrderIsRegistered
-                throw new NotImplementedException();
+                DateTime baseDate = new DateTime(2010 , 8 , 23 , 9 , 4 , 49);
+                SimulationTime sut = new SimulationTime(baseDate);
+                var ts = TimeSpan. FromSeconds(10);
+
+                var result = sut - ts;
+                result. ToAbsoluteDateTime(). Should(). BeCloseTo(baseDate - ts , TimeSpan. FromMilliseconds(1));
             }
         }
 
@@ -136,17 +156,20 @@ namespace DatesAndStuff.Tests
           // millisecond representation works
           public void OneMillisecondPerTick_MillisecondRepresentation_ShouldBehaveCorrectly()
           {
-              //var t1 = SimulationTime.MinValue.AddMilliseconds(10);
-              throw new NotImplementedException();
-          }
+                //var t1 = SimulationTime.MinValue.AddMilliseconds(10);
+                var t1 = SimulationTime. MinValue. AddMilliseconds(10);
+                t1. TotalMilliseconds. Should(). Be(SimulationTime. MinValue. TotalMilliseconds + 10);
+            }
 
           [Test]
           // next millisec calculation works /MST
           public void NextMillisec_Increment_ShouldReturnNextMillisecond()
           {
-              //Assert.AreEqual(t1.TotalMilliseconds + 1, t1.NextMillisec.TotalMilliseconds);
-              throw new NotImplementedException();
-          }
+                //Assert.AreEqual(t1.TotalMilliseconds + 1, t1.NextMillisec.TotalMilliseconds);
+                var t1 = SimulationTime. MinValue. AddMilliseconds(100);
+                var next = t1. NextMillisec;
+                next. TotalMilliseconds. Should(). Be(t1. TotalMilliseconds + 1);
+            }
       }
 
       private class EqualityAndAdditionTests
@@ -206,8 +229,12 @@ namespace DatesAndStuff.Tests
           // check string representation given by ToString
           public void Instance_ToString_ShouldReturnCorrectStringRepresentation()
           {
-              throw new NotImplementedException();
-          }
+                DateTime dt = new DateTime(2022 , 5 , 4 , 13 , 30 , 0);
+                var simTime = new SimulationTime(dt);
+
+                string expectedString = dt. ToString("yyyy-MM-ddTHH:mm:ss"); // matches "2022-05-04T13:30:00"
+                simTime. ToString(). Should(). Be(expectedString);
+            }
       }
     }
 }
