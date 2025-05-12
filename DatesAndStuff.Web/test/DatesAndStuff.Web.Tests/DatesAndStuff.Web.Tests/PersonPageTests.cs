@@ -136,16 +136,9 @@ namespace DatesAndStuff. Web. Tests
 
             // Assert
             var salaryAfterSubmission = double. Parse(salaryLabel. Text);
-            if (increasePercent > -10)
-            {
-                double expectedSalary = baseSalary * (1 + increasePercent / 100);
-                salaryAfterSubmission. Should(). BeApproximately(expectedSalary , 0.001);
-            }
-            else
-            {
-                // Ha -10-nél kisebb az érték, akkor nem változhat a fizetés
-                salaryAfterSubmission. Should(). Be(baseSalary);
-            }
+            double expectedSalary = baseSalary * (1 + increasePercent / 100);
+            salaryAfterSubmission. Should(). BeApproximately(expectedSalary , 0.001);
+
         }
 
         public static IEnumerable<double> FailingSalaryIncreasePercentages => new double [ ]
@@ -153,7 +146,8 @@ namespace DatesAndStuff. Web. Tests
             -550,
             -19.9999,
             -11,
-            -100
+            -100,
+            -10
 };
         [Test, TestCaseSource(nameof(FailingSalaryIncreasePercentages))]
         public void Person_UnreasonableSalaryDecrease_ShouldThrowErrors(double decreasePercent)
