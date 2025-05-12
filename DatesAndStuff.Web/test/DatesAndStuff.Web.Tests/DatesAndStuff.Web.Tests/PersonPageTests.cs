@@ -20,6 +20,7 @@ namespace DatesAndStuff. Web. Tests
 
         private Process? _blazorProcess;
 
+
         [OneTimeSetUp]
         public void StartBlazorServer()
         {
@@ -63,6 +64,7 @@ namespace DatesAndStuff. Web. Tests
                     Thread. Sleep(1000);
                 }
             }
+
         }
 
         [OneTimeTearDown]
@@ -113,9 +115,10 @@ namespace DatesAndStuff. Web. Tests
         public void Person_SalaryIncrease_ShouldIncrease(double increasePercent)
         {
             // Arrange
-            var wait = new WebDriverWait(driver , TimeSpan. FromSeconds(5));
+
             driver. Navigate(). GoToUrl(BaseURL);
             driver. FindElement(By. XPath("//*[@data-test='PersonPageNavigation']")). Click();
+            var wait = new WebDriverWait(driver , TimeSpan. FromSeconds(5));
             Thread. Sleep(100);
             var salaryLabel = wait. Until(ExpectedConditions. ElementExists(By. XPath("//*[@data-test='DisplayedSalary']")));
             var baseSalary = double. Parse(salaryLabel. Text);
@@ -143,6 +146,35 @@ namespace DatesAndStuff. Web. Tests
                 // Ha -10-nél kisebb az érték, akkor nem változhat a fizetés
                 salaryAfterSubmission. Should(). Be(baseSalary);
             }
+        }
+
+        public static IEnumerable<double> FailingSalaryIncreasePercentages => new double [ ]
+{
+            -550,
+            -19.9999,
+            -11,
+            -100
+};
+        [Test, TestCaseSource(nameof(FailingSalaryIncreasePercentages))]
+        public void Person_UnreasonableSalaryDecrease_ShouldThrowErrors(double decreasePercent)
+        {
+            driver. Navigate(). GoToUrl(BaseURL + "/person");
+            var wait = new WebDriverWait(driver , TimeSpan. FromSeconds(5));
+            Thread. Sleep(100);
+            var percentInput = wait. Until(ExpectedConditions. ElementExists(By. XPath("//*[@data-test='SalaryIncreasePercentageInput']")));
+            percentInput. Clear();
+            percentInput. SendKeys(decreasePercent.ToString());
+
+            var submitButton = wait. Until(ExpectedConditions. ElementExists(By. XPath("//*[@data-test='SalaryIncreaseSubmitButton']")));
+            submitButton. Click();
+            Thread. Sleep(0);
+
+            String errorMessage = "The specified percentag should be between -10 and infinity.";
+            var inputFieldValidationError = wait. Until(ExpectedConditions. ElementExists(By. XPath("//*[@data-test='SalaryIncreasePercentageInput']/following-sibling::*[self::div][1]")));
+            inputFieldValidationError. Text. Should(). Contain(errorMessage);
+
+            var validationErrorElement = wait. Until(ExpectedConditions. ElementIsVisible(By. XPath("(//ul[contains(@class, 'validation-errors')]/li)[1]")));
+            validationErrorElement. Text. Should(). Contain(errorMessage);
         }
         private bool IsElementPresent(By by)
         {
