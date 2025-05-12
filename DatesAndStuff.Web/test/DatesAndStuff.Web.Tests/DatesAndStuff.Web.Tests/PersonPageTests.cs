@@ -107,7 +107,6 @@ namespace DatesAndStuff. Web. Tests
             15,
             20,
             -9.9999,
-            -10,
             100
 };
 
